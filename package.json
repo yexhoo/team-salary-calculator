@@ -1,0 +1,32 @@
+{
+  "name": "team-salary-calculator",
+  "version": "1.0.0",
+  "description": "Application that allows calculating the salary of the soccer team.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yexhoo/team-salary-calculator.git"
+  },
+  "keywords": [
+    "team",
+    "salary",
+    "calculator"
+  ],
+  "author": "yexhoo (Josue Nolasco Miranda)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yexhoo/team-salary-calculator/issues"
+  },
+  "homepage": "https://github.com/yexhoo/team-salary-calculator#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  }
+}
