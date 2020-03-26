@@ -1,0 +1,16 @@
+{
+    "metas": [
+        {
+            "nombre": "meta-1",
+            "meta_de_goles": [
+                { "nivel":"A","numero_goles": 5 },
+                { "nivel":"B","numero_goles": 10 },
+                { "nivel":"C","numero_goles": 15 },
+                { "nivel":"Cuauh","numero_goles": 20 }
+            ]
+        }
+    ],
+    "equipos": [
+        {}
+    ]
+}
