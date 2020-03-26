@@ -28,10 +28,16 @@ interface IPlayer {
     sueldo_completo: number
 }
 
+interface ITotalTeamGoals {
+    scored: number
+    required: number
+}
+
 export {
     ITeams,
     ITeam,
     ILevel,
     IPlayer,
-    ILevelType
+    ILevelType,
+    ITotalTeamGoals
 }
