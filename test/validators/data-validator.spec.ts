@@ -1,9 +1,10 @@
 import 'mocha'
 import { expect } from 'chai'
 
-import File from '../../src/file'
+import File from '../../src/utils/file'
 import Validator from '../../src/validators/data-validator'
-import { ITeams } from '../../src/interfaces';
+import { ITeams } from '../../src/utils/interfaces';
+import Message from "../../src/utils/errorMessage"
 
 describe('Data Validator', () => {
 
@@ -13,33 +14,13 @@ describe('Data Validator', () => {
         testFile = resources.concat('team-list-is-required.json')
         const list: ITeams = File.readJson(testFile)
 
-        expect(() => Validator.data(list)).to.throw(Error, "lista de equipos es requerido")
+        expect(() => Validator.data(list)).to.throw(Error, Message.LISTA_EQUIPOS_REQUERIDO)
     });
 
     it('lista de metas es requerido', () => {
         testFile = resources.concat('level-types-is-required.json')
         const list: ITeams = File.readJson(testFile)
 
-        expect(() => Validator.data(list)).to.throw(Error, "lista de metas es requerido")
-    });
-
-    it('Meta por equipo no coincide con las metas definidas', () => {
-        testFile = resources.concat('data-meta-no-defined.json')
-        const list: ITeams = File.readJson(testFile)
-
-        const expectedError = `La meta [${list.equipos[1].meta}] del equipo [${list.equipos[1].nombre}] no concide con las metas definidas`
-        expect(() => Validator.data(list)).to.throw(Error, expectedError)
-    });
-
-    it('Nivel por jugador no coincide con las metas definidas', () => {
-        testFile = resources.concat('data-player-level-meta-no-defined.json')
-        const list: ITeams = File.readJson(testFile)
-
-        const nivel = list.equipos[0].jugadores[0].nivel
-        const player = list.equipos[0].jugadores[0].nombre
-        const team = list.equipos[0].nombre
-
-        const expectedError = `El nivel [${nivel}] del jugador [${player}] del equipo [${team}] no concide con las metas definidas`
-        expect(() => Validator.data(list)).to.throw(Error, expectedError)
+        expect(() => Validator.data(list)).to.throw(Error, Message.LISTA_METAS_REQUERIDO)
     });
 });
