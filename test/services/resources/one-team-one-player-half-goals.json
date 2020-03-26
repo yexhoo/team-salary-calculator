@@ -1,0 +1,28 @@
+{
+    "metas": [
+        {
+            "nombre": "meta-1",
+            "meta_de_goles": [
+                { "nivel":"A","numero_goles": 5 },
+                { "nivel":"B","numero_goles": 10 },
+                { "nivel":"C","numero_goles": 15 },
+                { "nivel":"Cuauh","numero_goles": 20 }
+            ]
+        }
+    ],
+    "equipos": [
+        {
+            "nombre": "Club America",
+            "meta": "meta-1",
+            "jugadores" : [
+                {
+                    "nombre": "Luis",
+                    "nivel": "Cuauh",
+                    "goles": 10,
+                    "sueldo": 50000,
+                    "bono": 10000
+                }
+            ]
+        }
+    ]
+}

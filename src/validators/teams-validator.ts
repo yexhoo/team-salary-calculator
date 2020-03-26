@@ -33,15 +33,15 @@ export default class TeamValidator {
             throw Error(Message.NIVEL_JUGADOR_REQUERIDO)
         }
 
-        if (!player.goles || player.goles < 0) {
+        if (player.goles === undefined || player.goles < 0) {
             throw Error(Message.GOLES_POR_JUGADOR_MAYOR_A_CERO)
         }
 
-        if (!player.sueldo || player.sueldo <= 0) {
+        if (player.sueldo === undefined || player.sueldo <= 0) {
             throw Error(Message.SUELDO_POR_JUGADOR_MAYOR_A_CERO)
         }
 
-        if (!player.bono || player.bono <= 0) {
+        if (player.bono === undefined || player.bono <= 0) {
             throw Error(Message.BONO_POR_JUGADOR_MAYOR_A_CERO)
         }
     }

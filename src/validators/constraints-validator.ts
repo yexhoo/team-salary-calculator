@@ -1,6 +1,7 @@
-import { ITeams, ITeam, ILevelType, ILevel } from "../utils/interfaces"
+import { ITeams, ITeam, ILevel } from "../utils/interfaces"
 import Util from "util"
 import Message from "../utils/errorMessage"
+import Extractor from "../utils/extractor"
 
 export default class DataConstraintsValidator {
 
@@ -26,7 +27,7 @@ export default class DataConstraintsValidator {
 
     static playerLevel = (data: ITeams) => {
 
-        const metasMap = DataConstraintsValidator.getMetas(data.metas)
+        const metasMap = Extractor.getMetas(data.metas)
         for (let i = 0; i < data.equipos.length; i++) {
             DataConstraintsValidator.validateMetaVsPlayerLevel(data.equipos[i], metasMap)
         }
@@ -40,7 +41,7 @@ export default class DataConstraintsValidator {
             return !meta_de_goles.some(mg => mg.nivel === player.nivel)
         })
 
-        if (playersLevelNotDefined) {
+        if (playersLevelNotDefined.length) {
 
             const level = playersLevelNotDefined[0].nivel
             const player = playersLevelNotDefined[0].nombre
@@ -48,17 +49,5 @@ export default class DataConstraintsValidator {
 
             throw Error(err)
         }
-    }
-
-    static getMetas = (metas: ILevelType[]): Map<string, ILevel[]> => {
-
-        const metasMap = new Map<string, ILevel[]>()
-        metas.forEach(meta => {
-            if (!metasMap.has(meta.nombre)) {
-                metasMap.set(meta.nombre, meta.meta_de_goles)
-            }
-        })
-
-        return metasMap
     }
 }
