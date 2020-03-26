@@ -1,21 +1,22 @@
-import { ITeam, IPlayer } from "../interfaces"
+import { IPlayer, ITeams } from "../utils/interfaces"
+import Message from "../utils/errorMessage"
 
 export default class TeamValidator {
 
-    static teams = (teams: ITeam[]) => {
+    static validate = (data: ITeams) => {
 
-        teams.forEach(team => {
+        data.equipos.forEach(team => {
 
             if (!team.nombre) {
-                throw Error("nombre equipo es requerido")
+                throw Error(Message.NOMBRE_EQUIPO_REQUERIDO)
             }
 
             if (!team.meta) {
-                throw Error("meta por equipo es requerida")
+                throw Error(Message.META_POR_EQUIPO_REQUERIDO)
             }
 
             if (!team.jugadores || !team.jugadores.length) {
-                throw Error("jugadores por equipo es requerido")
+                throw Error(Message.JUGADORES_POR_EQUIPO_REQUERIDO)
             }
 
             team.jugadores.forEach(player => TeamValidator.team(player))
@@ -25,23 +26,23 @@ export default class TeamValidator {
     static team = (player: IPlayer) => {
 
         if (!player.nombre) {
-            throw Error("nombre jugador es requerido")
+            throw Error(Message.NOMBRE_JUGADOR_REQUERIDO)
         }
 
         if (!player.nivel) {
-            throw Error("nivel de jugador es requerido")
+            throw Error(Message.NIVEL_JUGADOR_REQUERIDO)
         }
 
         if (!player.goles || player.goles < 0) {
-            throw Error("goles por jugador es mayor o igual a cero")
+            throw Error(Message.GOLES_POR_JUGADOR_MAYOR_A_CERO)
         }
 
         if (!player.sueldo || player.sueldo <= 0) {
-            throw Error("sueldo por jugador es mayor a cero")
+            throw Error(Message.SUELDO_POR_JUGADOR_MAYOR_A_CERO)
         }
 
         if (!player.bono || player.bono <= 0) {
-            throw Error("bono por jugador es mayor a cero")
+            throw Error(Message.BONO_POR_JUGADOR_MAYOR_A_CERO)
         }
     }
 }
