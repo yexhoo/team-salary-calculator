@@ -1,0 +1,18 @@
+{
+    "metas": [
+        {
+            "nombre": "meta-1",
+            "meta_de_goles": [
+                {
+                   "nivel":"A",
+                   "numero_goles": -1 
+                }
+            ]
+        }
+    ],
+    "equipos": [
+        {
+            "nombre": "Club America"
+        }
+    ]
+}
