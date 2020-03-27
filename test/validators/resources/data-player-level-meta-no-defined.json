@@ -1,26 +1,26 @@
 {
     "metas": [
         {
-            "nombre": "meta-1",
+            "nombre_meta": "meta-1",
             "meta_de_goles": [
-                { "nivel":"A","numero_goles": 5 },
-                { "nivel":"B","numero_goles": 10 },
-                { "nivel":"C","numero_goles": 15 },
-                { "nivel":"Cuauh","numero_goles": 20 }
+                { "nivel_meta":"A","numero_goles": 5 },
+                { "nivel_meta":"B","numero_goles": 10 },
+                { "nivel_meta":"C","numero_goles": 15 },
+                { "nivel_meta":"Cuauh","numero_goles": 20 }
             ]
         }
     ],
     "equipos": [
         {
-            "nombre": "Club America",
-            "meta": "meta-1",
+            "nombre_equipo": "Club America",
+            "meta_equipo": "meta-1",
             "jugadores" : [
                 {
-                    "nombre": "El Rulo",
-                    "nivel": "X",
-                    "goles": 5,
-                    "sueldo": 10000,
-                    "bono": 600
+                    "nombre_jugador": "El Rulo",
+                    "nivel_jugador": "X",
+                    "goles_jugador": 5,
+                    "sueldo_jugador": 10000,
+                    "bono_jugador": 600
                 }
             ]
         }

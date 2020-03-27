@@ -1,13 +1,13 @@
 {
     "metas": [
         {
-            "nombre": "meta-1",
+            "nombre_meta": "meta-1",
             "meta_de_goles": []
         }
     ],
     "equipos": [
         {
-            "nombre": "Club America"
+            "nombre_equipo": "Club America"
         }
     ]
 }

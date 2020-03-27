@@ -20,7 +20,7 @@ export default class MetaValidator {
 
         levels.forEach(level => {
 
-            if (!level.nombre) {
+            if (!level.nombre_meta) {
                 throw Error(Message.NOMBRE_META_REQUERIDO)
             }
 
@@ -34,7 +34,7 @@ export default class MetaValidator {
 
     static meta = (level: ILevel) => {
 
-        if (!level.nivel) {
+        if (!level.nivel_meta) {
             throw Error(Message.NIVEL_META_GOLES_REQUERIDO)
         }
 

@@ -1,68 +1,68 @@
 {
     "metas": [
         {
-            "nombre": "meta-ganadores",
+            "nombre_meta": "ganadores",
             "meta_de_goles": [
-                { "nivel":"A","numero_goles": 5 },
-                { "nivel":"B","numero_goles": 10 },
-                { "nivel":"C","numero_goles": 15 },
-                { "nivel":"Cuauh","numero_goles": 20 }
+                { "nivel_meta":"A","numero_goles": 5 },
+                { "nivel_meta":"B","numero_goles": 10 },
+                { "nivel_meta":"C","numero_goles": 15 },
+                { "nivel_meta":"Cuauh","numero_goles": 20 }
             ]
         },
         {
-            "nombre": "meta-perdedores",
+            "nombre_meta": "perdedores",
             "meta_de_goles": [
-                { "nivel":"X","numero_goles": 1 },
-                { "nivel":"Y","numero_goles": 2 },
-                { "nivel":"Alan Pulido","numero_goles": 3 }
+                { "nivel_meta":"X","numero_goles": 1 },
+                { "nivel_meta":"Y","numero_goles": 2 },
+                { "nivel_meta":"Alan Pulido","numero_goles": 3 }
             ]
         }
     ],
     "equipos": [
         {
-            "nombre": "Club America",
-            "meta": "meta-ganadores",
+            "nombre_equipo": "Club America",
+            "meta_equipo": "ganadores",
             "jugadores" : [
                 {
-                    "nombre": "Luis",
-                    "nivel": "Cuauh",
-                    "goles": 20,
-                    "sueldo": 50000,
-                    "bono": 10000
+                    "nombre_jugador": "Luis",
+                    "nivel_jugador": "Cuauh",
+                    "goles_jugador": 20,
+                    "sueldo_jugador": 50000,
+                    "bono_jugador": 10000
                 },
                 {
-                    "nombre": "Raul",
-                    "nivel": "A",
-                    "goles": 3,
-                    "sueldo": 40000,
-                    "bono": 10000
+                    "nombre_jugador": "Raul",
+                    "nivel_jugador": "A",
+                    "goles_jugador": 3,
+                    "sueldo_jugador": 40000,
+                    "bono_jugador": 10000
                 }
             ]
         },
         {
-            "nombre": "Chivitas",
-            "meta": "meta-perdedores",
+            "nombre_equipo": "Chivitas",
+            "meta_equipo": "perdedores",
             "jugadores" : [
                 {
-                    "nombre": "Arturo",
-                    "nivel": "X",
-                    "goles": 1,
-                    "sueldo": 2000,
-                    "bono": 1000
+                    "nombre_jugador": "Arturo",
+                    "nivel_jugador": "X",
+                    "goles_jugador": 1,
+                    "sueldo_jugador": 2000,
+                    "bono_jugador": 1000
                 },
                 {
-                    "nombre": "Arturo",
-                    "nivel": "Y",
-                    "goles": 2,
-                    "sueldo": 3000,
-                    "bono": 1000
+                    "nombre_jugador": "Arturo",
+                    "nivel_jugador": "Y",
+                    "goles_jugador": 2,
+                    "sueldo_jugador": 3000,
+                    "bono_jugador": 1000
                 },
                 {
-                    "nombre": "Arturo",
-                    "nivel": "Alan Pulido",
-                    "goles": 3,
-                    "sueldo": 5000,
-                    "bono": 1000
+                    "nombre_jugador": "Arturo",
+                    "nivel_jugador": "Alan Pulido",
+                    "goles_jugador": 3,
+                    "sueldo_jugador": 5000,
+                    "bono_jugador": 1000
                 }
             ]
         }

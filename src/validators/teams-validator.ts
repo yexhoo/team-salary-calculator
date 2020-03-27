@@ -7,11 +7,11 @@ export default class TeamValidator {
 
         data.equipos.forEach(team => {
 
-            if (!team.nombre) {
+            if (!team.nombre_equipo) {
                 throw Error(Message.NOMBRE_EQUIPO_REQUERIDO)
             }
 
-            if (!team.meta) {
+            if (!team.meta_equipo) {
                 throw Error(Message.META_POR_EQUIPO_REQUERIDO)
             }
 
@@ -25,23 +25,23 @@ export default class TeamValidator {
 
     static team = (player: IPlayer) => {
 
-        if (!player.nombre) {
+        if (!player.nombre_jugador) {
             throw Error(Message.NOMBRE_JUGADOR_REQUERIDO)
         }
 
-        if (!player.nivel) {
+        if (!player.nivel_jugador) {
             throw Error(Message.NIVEL_JUGADOR_REQUERIDO)
         }
 
-        if (player.goles === undefined || player.goles < 0) {
+        if (player.goles_jugador === undefined || player.goles_jugador < 0) {
             throw Error(Message.GOLES_POR_JUGADOR_MAYOR_A_CERO)
         }
 
-        if (player.sueldo === undefined || player.sueldo <= 0) {
+        if (player.sueldo_jugador === undefined || player.sueldo_jugador <= 0) {
             throw Error(Message.SUELDO_POR_JUGADOR_MAYOR_A_CERO)
         }
 
-        if (player.bono === undefined || player.bono <= 0) {
+        if (player.bono_jugador === undefined || player.bono_jugador <= 0) {
             throw Error(Message.BONO_POR_JUGADOR_MAYOR_A_CERO)
         }
     }

@@ -6,11 +6,11 @@ export default class SalaryHelper {
     static getTotalGoals = (team: ITeam, metas: Map<string, ILevel[]>): ITotalTeamGoals => {
 
         const scored: number = team.jugadores
-            .reduce((scored, p) => { return scored + p.goles; }, 0);
+            .reduce((scored, p) => { return scored + p.goles_jugador; }, 0);
 
         const required: number = team.jugadores
             .reduce((required, p) => {
-                return required + Extractor.getLevelGoals(p.nivel, team.meta, metas)!;
+                return required + Extractor.getLevelGoals(p.nivel_jugador, team.meta_equipo, metas)!;
             }, 0);
 
         return <ITotalTeamGoals>{
