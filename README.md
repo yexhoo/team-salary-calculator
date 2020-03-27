@@ -1,5 +1,5 @@
 # Team Salary Calculator
-Servicio que permite calcular el salario de un equipo de futbol. El sueldo de los jugadores del de un equipo de futbol se compone de dos partes un **sueldo fijo** y un **bono variable**, la suma de estas dos partes es el sueldo de un jugador. El bono variable se compone de dos partes **meta de goles individual** y **meta de goles por equipo** cada una tiene un peso de **50%**.
+Servicio que permite calcular el salario de uno o varios equipos de futbol. Es posible tener distintas metas de goles por cada equipo o compartir una misma meta de goles. El sueldo de los jugadores de un equipo de futbol se compone de dos partes un **sueldo fijo** y un **bono variable**, la suma de estas dos partes es el sueldo de un jugador. El bono variable se compone de dos partes **meta de goles individual** y **meta de goles por equipo** cada una tiene un peso de **50%**.
 
 ## ¿Cómo se calculan los alcances de meta y bonos?
 
@@ -31,185 +31,185 @@ La meta individual de goles por jugador depende del nivel que tenga asignado:
 
 ## Estructura
 
-```javascript
-// Ejemplo de una entrada basica en formato JSON.
-{
-    "metas": [
-        {
-            "nombre_meta": "ganadores",
-            "meta_de_goles": [
-                { "nivel_meta":"A","numero_goles": 5 },
-                { "nivel_meta":"B","numero_goles": 10 },
-                { "nivel_meta":"C","numero_goles": 15 },
-                { "nivel_meta":"Cuauh","numero_goles": 20 }
-            ]
-        },
-        {
-            "nombre_meta": "perdedores",
-            "meta_de_goles": [
-                { "nivel_meta":"X","numero_goles": 1 },
-                { "nivel_meta":"Y","numero_goles": 2 },
-                { "nivel_meta":"Alan Pulido","numero_goles": 3 }
-            ]
-        }
-    ],
-    "equipos": [
-        {
-            "nombre_equipo": "Club America",
-            "meta_equipo": "ganadores",
-            "jugadores" : [
-                {
-                    "nombre_jugador": "Luis",
-                    "nivel_jugador": "Cuauh",
-                    "goles_jugador": 20,
-                    "sueldo_jugador": 50000,
-                    "bono_jugador": 10000
-                },
-                {
-                    "nombre_jugador": "Raul",
-                    "nivel_jugador": "A",
-                    "goles_jugador": 3,
-                    "sueldo_jugador": 40000,
-                    "bono_jugador": 10000
-                }
-            ]
-        },
-        {
-            "nombre_equipo": "Chivitas",
-            "meta_equipo": "perdedores",
-            "jugadores" : [
-                {
-                    "nombre_jugador": "Arturo",
-                    "nivel_jugador": "X",
-                    "goles_jugador": 1,
-                    "sueldo_jugador": 2000,
-                    "bono_jugador": 1000
-                },
-                {
-                    "nombre_jugador": "Arturo",
-                    "nivel_jugador": "Y",
-                    "goles_jugador": 2,
-                    "sueldo_jugador": 3000,
-                    "bono_jugador": 1000
-                },
-                {
-                    "nombre_jugador": "Arturo",
-                    "nivel_jugador": "Alan Pulido",
-                    "goles_jugador": 3,
-                    "sueldo_jugador": 5000,
-                    "bono_jugador": 1000
-                }
-            ]
-        }
-    ]
-}
-```
+    ```javascript
+    // Ejemplo entrada JSON.
+    {
+        "metas": [
+            {
+                "nombre_meta": "ganadores",
+                "meta_de_goles": [
+                    { "nivel_meta":"A","numero_goles": 5 },
+                    { "nivel_meta":"B","numero_goles": 10 },
+                    { "nivel_meta":"C","numero_goles": 15 },
+                    { "nivel_meta":"Cuauh","numero_goles": 20 }
+                ]
+            },
+            {
+                "nombre_meta": "perdedores",
+                "meta_de_goles": [
+                    { "nivel_meta":"X","numero_goles": 1 },
+                    { "nivel_meta":"Y","numero_goles": 2 },
+                    { "nivel_meta":"Alan Pulido","numero_goles": 3 }
+                ]
+            }
+        ],
+        "equipos": [
+            {
+                "nombre_equipo": "Club America",
+                "meta_equipo": "ganadores",
+                "jugadores" : [
+                    {
+                        "nombre_jugador": "Luis",
+                        "nivel_jugador": "Cuauh",
+                        "goles_jugador": 20,
+                        "sueldo_jugador": 50000,
+                        "bono_jugador": 10000
+                    },
+                    {
+                        "nombre_jugador": "Raul",
+                        "nivel_jugador": "A",
+                        "goles_jugador": 3,
+                        "sueldo_jugador": 40000,
+                        "bono_jugador": 10000
+                    }
+                ]
+            },
+            {
+                "nombre_equipo": "Chivitas",
+                "meta_equipo": "perdedores",
+                "jugadores" : [
+                    {
+                        "nombre_jugador": "Arturo",
+                        "nivel_jugador": "X",
+                        "goles_jugador": 1,
+                        "sueldo_jugador": 2000,
+                        "bono_jugador": 1000
+                    },
+                    {
+                        "nombre_jugador": "Arturo",
+                        "nivel_jugador": "Y",
+                        "goles_jugador": 2,
+                        "sueldo_jugador": 3000,
+                        "bono_jugador": 1000
+                    },
+                    {
+                        "nombre_jugador": "Arturo",
+                        "nivel_jugador": "Alan Pulido",
+                        "goles_jugador": 3,
+                        "sueldo_jugador": 5000,
+                        "bono_jugador": 1000
+                    }
+                ]
+            }
+        ]
+    }
+    ```
 
-```javascript
-// Ejemplo de salida en formato JSON
-{
-    "metas": [
-        {
-            "nombre_meta": "ganadores",
-            "meta_de_goles": [
-                {
-                    "nivel_meta": "A",
-                    "numero_goles": 5
-                },
-                {
-                    "nivel_meta": "B",
-                    "numero_goles": 10
-                },
-                {
-                    "nivel_meta": "C",
-                    "numero_goles": 15
-                },
-                {
-                    "nivel_meta": "Cuauh",
-                    "numero_goles": 20
-                }
-            ]
-        },
-        {
-            "nombre_meta": "perdedores",
-            "meta_de_goles": [
-                {
-                    "nivel_meta": "X",
-                    "numero_goles": 1
-                },
-                {
-                    "nivel_meta": "Y",
-                    "numero_goles": 2
-                },
-                {
-                    "nivel_meta": "Alan Pulido",
-                    "numero_goles": 3
-                }
-            ]
-        }
-    ],
-    "equipos": [
-        {
-            "nombre_equipo": "Club America",
-            "meta_equipo": "ganadores",
-            "jugadores": [
-                {
-                    "nombre_jugador": "Luis",
-                    "nivel_jugador": "Cuauh",
-                    "goles_jugador": 20,
-                    "sueldo_jugador": 50000,
-                    "bono_jugador": 10000,
-                    "sueldo_completo_jugador": 59600
-                },
-                {
-                    "nombre_jugador": "Raul",
-                    "nivel_jugador": "A",
-                    "goles_jugador": 3,
-                    "sueldo_jugador": 40000,
-                    "bono_jugador": 10000,
-                    "sueldo_completo_jugador": 47600
-                }
-            ]
-        },
-        {
-            "nombre_equipo": "Chivitas",
-            "meta_equipo": "perdedores",
-            "jugadores": [
-                {
-                    "nombre_jugador": "Arturo",
-                    "nivel_jugador": "X",
-                    "goles_jugador": 1,
-                    "sueldo_jugador": 2000,
-                    "bono_jugador": 1000,
-                    "sueldo_completo_jugador": 3000
-                },
-                {
-                    "nombre_jugador": "Arturo",
-                    "nivel_jugador": "Y",
-                    "goles_jugador": 2,
-                    "sueldo_jugador": 3000,
-                    "bono_jugador": 1000,
-                    "sueldo_completo_jugador": 4000
-                },
-                {
-                    "nombre_jugador": "Arturo",
-                    "nivel_jugador": "Alan Pulido",
-                    "goles_jugador": 3,
-                    "sueldo_jugador": 5000,
-                    "bono_jugador": 1000,
-                    "sueldo_completo_jugador": 6000
-                }
-            ]
-        }
-    ]
-}
-```
+    ```javascript
+    // Ejemplo salida JSON
+    {
+        "metas": [
+            {
+                "nombre_meta": "ganadores",
+                "meta_de_goles": [
+                    {
+                        "nivel_meta": "A",
+                        "numero_goles": 5
+                    },
+                    {
+                        "nivel_meta": "B",
+                        "numero_goles": 10
+                    },
+                    {
+                        "nivel_meta": "C",
+                        "numero_goles": 15
+                    },
+                    {
+                        "nivel_meta": "Cuauh",
+                        "numero_goles": 20
+                    }
+                ]
+            },
+            {
+                "nombre_meta": "perdedores",
+                "meta_de_goles": [
+                    {
+                        "nivel_meta": "X",
+                        "numero_goles": 1
+                    },
+                    {
+                        "nivel_meta": "Y",
+                        "numero_goles": 2
+                    },
+                    {
+                        "nivel_meta": "Alan Pulido",
+                        "numero_goles": 3
+                    }
+                ]
+            }
+        ],
+        "equipos": [
+            {
+                "nombre_equipo": "Club America",
+                "meta_equipo": "ganadores",
+                "jugadores": [
+                    {
+                        "nombre_jugador": "Luis",
+                        "nivel_jugador": "Cuauh",
+                        "goles_jugador": 20,
+                        "sueldo_jugador": 50000,
+                        "bono_jugador": 10000,
+                        "sueldo_completo_jugador": 59600
+                    },
+                    {
+                        "nombre_jugador": "Raul",
+                        "nivel_jugador": "A",
+                        "goles_jugador": 3,
+                        "sueldo_jugador": 40000,
+                        "bono_jugador": 10000,
+                        "sueldo_completo_jugador": 47600
+                    }
+                ]
+            },
+            {
+                "nombre_equipo": "Chivitas",
+                "meta_equipo": "perdedores",
+                "jugadores": [
+                    {
+                        "nombre_jugador": "Arturo",
+                        "nivel_jugador": "X",
+                        "goles_jugador": 1,
+                        "sueldo_jugador": 2000,
+                        "bono_jugador": 1000,
+                        "sueldo_completo_jugador": 3000
+                    },
+                    {
+                        "nombre_jugador": "Arturo",
+                        "nivel_jugador": "Y",
+                        "goles_jugador": 2,
+                        "sueldo_jugador": 3000,
+                        "bono_jugador": 1000,
+                        "sueldo_completo_jugador": 4000
+                    },
+                    {
+                        "nombre_jugador": "Arturo",
+                        "nivel_jugador": "Alan Pulido",
+                        "goles_jugador": 3,
+                        "sueldo_jugador": 5000,
+                        "bono_jugador": 1000,
+                        "sueldo_completo_jugador": 6000
+                    }
+                ]
+            }
+        ]
+    }
+    ```
 ***
 ### Ambiente de desarrollo
 
-Los siguientes pasos son necesarios solo en caso de querer:
-* Ejecutar pruebas unitarias
-* Ejecutar servidor en localhost.
+Los siguientes pasos son necesarios en caso de requerir:
+* Ejecutar pruebas unitarias.
+* Ejecutar servidor en localhost modo desarrollo.
 
 ```sh
 # Abrir una terminal
@@ -295,7 +295,7 @@ $ npm test
   26 passing (324ms)
 ```
 ```sh
-## Ejecutar en modo desarrollo
+## Ejecutar servidor en modo desarrollo
 $ npm run dev
 
 ## Salida
@@ -380,7 +380,7 @@ app_1  | Salary calculator is running on port 3000
 ## **Endpoint**
 
 **Salary**
-* **Descripción:** Permite calcular el sueldo completo de los jugadores de un equipo de futbol.
+* **Descripción:** Permite calcular el salario de uno o varios equipos de futbol. Es posible tener distintas metas de goles por cada equipo o compartir una misma meta de goles.
 * **URL:** http://localhost:3000/salary
 * **Content-Type:** application/json
 * **Method:** `POST`
@@ -404,36 +404,36 @@ app_1  | Salary calculator is running on port 3000
 |bono_jugador   | number |
 
 *  **Body:** 
-```javascript
-{
-    "metas": [
-        {
-            "nombre_meta": "ganadores",
-            "meta_de_goles": [
-                { "nivel_meta":"A","numero_goles": 1 },
-                { "nivel_meta":"B","numero_goles": 10 },
-                { "nivel_meta":"C","numero_goles": 15 },
-                { "nivel_meta":"Cuauh","numero_goles": 20 }
-            ]
-        }
-    ],
-    "equipos": [
-        {
-            "nombre_equipo": "Club America",
-            "meta_equipo": "ganadores",
-            "jugadores" : [
-                {
-                    "nombre_jugador": "Luis",
-                    "nivel_jugador": "Cuauh",
-                    "goles_jugador": 20,
-                    "sueldo_jugador": 50000,
-                    "bono_jugador": 10000
-                }
-            ]
-        }
-    ]
-}
-```
+    ```javascript
+    {
+        "metas": [
+            {
+                "nombre_meta": "ganadores",
+                "meta_de_goles": [
+                    { "nivel_meta":"A","numero_goles": 1 },
+                    { "nivel_meta":"B","numero_goles": 10 },
+                    { "nivel_meta":"C","numero_goles": 15 },
+                    { "nivel_meta":"Cuauh","numero_goles": 20 }
+                ]
+            }
+        ],
+        "equipos": [
+            {
+                "nombre_equipo": "Club America",
+                "meta_equipo": "ganadores",
+                "jugadores" : [
+                    {
+                        "nombre_jugador": "Luis",
+                        "nivel_jugador": "Cuauh",
+                        "goles_jugador": 20,
+                        "sueldo_jugador": 50000,
+                        "bono_jugador": 10000
+                    }
+                ]
+            }
+        ]
+    }
+    ```
 * **Success Response:**
   * **Code:** 200 <br />
     **Content:** 
@@ -579,7 +579,7 @@ app_1  | Salary calculator is running on port 3000
         "detail": "La lista de equipos es requerida"
     }
     ```
-* **Code:** 400 Bad Request <br />
+  * **Code:** 400 Bad Request <br />
     **Content:** 
     ```javascript
     {
@@ -587,7 +587,7 @@ app_1  | Salary calculator is running on port 3000
         "detail": "La meta por equipo es requerida"
     }
     ```
-* **Code:** 400 Bad Request <br />
+  * **Code:** 400 Bad Request <br />
     **Content:** 
     ```javascript
     {
@@ -595,7 +595,7 @@ app_1  | Salary calculator is running on port 3000
         "detail": "El nombre del equipo es requerido"
     }
     ```
-* **Code:** 400 Bad Request <br />
+  * **Code:** 400 Bad Request <br />
     **Content:** 
     ```javascript
     {
@@ -603,7 +603,7 @@ app_1  | Salary calculator is running on port 3000
         "detail": "Los jugadores por equipo son requeridos"
     }
     ```
-* **Code:** 400 Bad Request <br />
+  * **Code:** 400 Bad Request <br />
     **Content:** 
     ```javascript
     {
@@ -611,7 +611,7 @@ app_1  | Salary calculator is running on port 3000
         "detail": "La meta [meta-2] del equipo [Cruz Azul FC] no concide con las metas definidas"
     }
     ```
-* **Code:** 400 Bad Request <br />
+  * **Code:** 400 Bad Request <br />
     **Content:** 
     ```javascript
     {
@@ -621,33 +621,33 @@ app_1  | Salary calculator is running on port 3000
     ```
 
 * **Sample Call:**
-```javascript
-{
-    "metas": [
-        {
-            "nombre_meta": "ganadores",
-            "meta_de_goles": [
-                { "nivel_meta":"A","numero_goles": 1 },
-                { "nivel_meta":"B","numero_goles": 10 },
-                { "nivel_meta":"C","numero_goles": 15 },
-                { "nivel_meta":"Cuauh","numero_goles": 20 }
-            ]
-        }
-    ],
-    "equipos": [
-        {
-            "nombre_equipo": "Club America",
-            "meta_equipo": "ganadores",
-            "jugadores" : [
-                {
-                    "nombre_jugador": "Luis",
-                    "nivel_jugador": "Cuauh",
-                    "goles_jugador": 20,
-                    "sueldo_jugador": 50000,
-                    "bono_jugador": 10000
-                }
-            ]
-        }
-    ]
-}
-```
+    ```javascript
+    {
+        "metas": [
+            {
+                "nombre_meta": "ganadores",
+                "meta_de_goles": [
+                    { "nivel_meta":"A","numero_goles": 1 },
+                    { "nivel_meta":"B","numero_goles": 10 },
+                    { "nivel_meta":"C","numero_goles": 15 },
+                    { "nivel_meta":"Cuauh","numero_goles": 20 }
+                ]
+            }
+        ],
+        "equipos": [
+            {
+                "nombre_equipo": "Club America",
+                "meta_equipo": "ganadores",
+                "jugadores" : [
+                    {
+                        "nombre_jugador": "Luis",
+                        "nivel_jugador": "Cuauh",
+                        "goles_jugador": 20,
+                        "sueldo_jugador": 50000,
+                        "bono_jugador": 10000
+                    }
+                ]
+            }
+        ]
+    }
+    ```
