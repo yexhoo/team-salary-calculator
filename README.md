@@ -31,179 +31,179 @@ La meta individual de goles por jugador depende del nivel que tenga asignado:
 
 ## Estructura
 
-    ```javascript
-    // Ejemplo entrada JSON.
-    {
-        "metas": [
-            {
-                "nombre_meta": "ganadores",
-                "meta_de_goles": [
-                    { "nivel_meta":"A","numero_goles": 5 },
-                    { "nivel_meta":"B","numero_goles": 10 },
-                    { "nivel_meta":"C","numero_goles": 15 },
-                    { "nivel_meta":"Cuauh","numero_goles": 20 }
-                ]
-            },
-            {
-                "nombre_meta": "perdedores",
-                "meta_de_goles": [
-                    { "nivel_meta":"X","numero_goles": 1 },
-                    { "nivel_meta":"Y","numero_goles": 2 },
-                    { "nivel_meta":"Alan Pulido","numero_goles": 3 }
-                ]
-            }
-        ],
-        "equipos": [
-            {
-                "nombre_equipo": "Club America",
-                "meta_equipo": "ganadores",
-                "jugadores" : [
-                    {
-                        "nombre_jugador": "Luis",
-                        "nivel_jugador": "Cuauh",
-                        "goles_jugador": 20,
-                        "sueldo_jugador": 50000,
-                        "bono_jugador": 10000
-                    },
-                    {
-                        "nombre_jugador": "Raul",
-                        "nivel_jugador": "A",
-                        "goles_jugador": 3,
-                        "sueldo_jugador": 40000,
-                        "bono_jugador": 10000
-                    }
-                ]
-            },
-            {
-                "nombre_equipo": "Chivitas",
-                "meta_equipo": "perdedores",
-                "jugadores" : [
-                    {
-                        "nombre_jugador": "Arturo",
-                        "nivel_jugador": "X",
-                        "goles_jugador": 1,
-                        "sueldo_jugador": 2000,
-                        "bono_jugador": 1000
-                    },
-                    {
-                        "nombre_jugador": "Arturo",
-                        "nivel_jugador": "Y",
-                        "goles_jugador": 2,
-                        "sueldo_jugador": 3000,
-                        "bono_jugador": 1000
-                    },
-                    {
-                        "nombre_jugador": "Arturo",
-                        "nivel_jugador": "Alan Pulido",
-                        "goles_jugador": 3,
-                        "sueldo_jugador": 5000,
-                        "bono_jugador": 1000
-                    }
-                ]
-            }
-        ]
-    }
-    ```
+```javascript
+// Ejemplo entrada JSON.
+{
+    "metas": [
+        {
+            "nombre_meta": "ganadores",
+            "meta_de_goles": [
+                { "nivel_meta":"A","numero_goles": 5 },
+                { "nivel_meta":"B","numero_goles": 10 },
+                { "nivel_meta":"C","numero_goles": 15 },
+                { "nivel_meta":"Cuauh","numero_goles": 20 }
+            ]
+        },
+        {
+            "nombre_meta": "perdedores",
+            "meta_de_goles": [
+                { "nivel_meta":"X","numero_goles": 1 },
+                { "nivel_meta":"Y","numero_goles": 2 },
+                { "nivel_meta":"Alan Pulido","numero_goles": 3 }
+            ]
+        }
+    ],
+    "equipos": [
+        {
+            "nombre_equipo": "Club America",
+            "meta_equipo": "ganadores",
+            "jugadores" : [
+                {
+                    "nombre_jugador": "Luis",
+                    "nivel_jugador": "Cuauh",
+                    "goles_jugador": 20,
+                    "sueldo_jugador": 50000,
+                    "bono_jugador": 10000
+                },
+                {
+                    "nombre_jugador": "Raul",
+                    "nivel_jugador": "A",
+                    "goles_jugador": 3,
+                    "sueldo_jugador": 40000,
+                    "bono_jugador": 10000
+                }
+            ]
+        },
+        {
+            "nombre_equipo": "Chivitas",
+            "meta_equipo": "perdedores",
+            "jugadores" : [
+                {
+                    "nombre_jugador": "Arturo",
+                    "nivel_jugador": "X",
+                    "goles_jugador": 1,
+                    "sueldo_jugador": 2000,
+                    "bono_jugador": 1000
+                },
+                {
+                    "nombre_jugador": "Arturo",
+                    "nivel_jugador": "Y",
+                    "goles_jugador": 2,
+                    "sueldo_jugador": 3000,
+                    "bono_jugador": 1000
+                },
+                {
+                    "nombre_jugador": "Arturo",
+                    "nivel_jugador": "Alan Pulido",
+                    "goles_jugador": 3,
+                    "sueldo_jugador": 5000,
+                    "bono_jugador": 1000
+                }
+            ]
+        }
+    ]
+}
+```
 
-    ```javascript
-    // Ejemplo salida JSON
-    {
-        "metas": [
-            {
-                "nombre_meta": "ganadores",
-                "meta_de_goles": [
-                    {
-                        "nivel_meta": "A",
-                        "numero_goles": 5
-                    },
-                    {
-                        "nivel_meta": "B",
-                        "numero_goles": 10
-                    },
-                    {
-                        "nivel_meta": "C",
-                        "numero_goles": 15
-                    },
-                    {
-                        "nivel_meta": "Cuauh",
-                        "numero_goles": 20
-                    }
-                ]
-            },
-            {
-                "nombre_meta": "perdedores",
-                "meta_de_goles": [
-                    {
-                        "nivel_meta": "X",
-                        "numero_goles": 1
-                    },
-                    {
-                        "nivel_meta": "Y",
-                        "numero_goles": 2
-                    },
-                    {
-                        "nivel_meta": "Alan Pulido",
-                        "numero_goles": 3
-                    }
-                ]
-            }
-        ],
-        "equipos": [
-            {
-                "nombre_equipo": "Club America",
-                "meta_equipo": "ganadores",
-                "jugadores": [
-                    {
-                        "nombre_jugador": "Luis",
-                        "nivel_jugador": "Cuauh",
-                        "goles_jugador": 20,
-                        "sueldo_jugador": 50000,
-                        "bono_jugador": 10000,
-                        "sueldo_completo_jugador": 59600
-                    },
-                    {
-                        "nombre_jugador": "Raul",
-                        "nivel_jugador": "A",
-                        "goles_jugador": 3,
-                        "sueldo_jugador": 40000,
-                        "bono_jugador": 10000,
-                        "sueldo_completo_jugador": 47600
-                    }
-                ]
-            },
-            {
-                "nombre_equipo": "Chivitas",
-                "meta_equipo": "perdedores",
-                "jugadores": [
-                    {
-                        "nombre_jugador": "Arturo",
-                        "nivel_jugador": "X",
-                        "goles_jugador": 1,
-                        "sueldo_jugador": 2000,
-                        "bono_jugador": 1000,
-                        "sueldo_completo_jugador": 3000
-                    },
-                    {
-                        "nombre_jugador": "Arturo",
-                        "nivel_jugador": "Y",
-                        "goles_jugador": 2,
-                        "sueldo_jugador": 3000,
-                        "bono_jugador": 1000,
-                        "sueldo_completo_jugador": 4000
-                    },
-                    {
-                        "nombre_jugador": "Arturo",
-                        "nivel_jugador": "Alan Pulido",
-                        "goles_jugador": 3,
-                        "sueldo_jugador": 5000,
-                        "bono_jugador": 1000,
-                        "sueldo_completo_jugador": 6000
-                    }
-                ]
-            }
-        ]
-    }
-    ```
+```javascript
+// Ejemplo salida JSON
+{
+    "metas": [
+        {
+            "nombre_meta": "ganadores",
+            "meta_de_goles": [
+                {
+                    "nivel_meta": "A",
+                    "numero_goles": 5
+                },
+                {
+                    "nivel_meta": "B",
+                    "numero_goles": 10
+                },
+                {
+                    "nivel_meta": "C",
+                    "numero_goles": 15
+                },
+                {
+                    "nivel_meta": "Cuauh",
+                    "numero_goles": 20
+                }
+            ]
+        },
+        {
+            "nombre_meta": "perdedores",
+            "meta_de_goles": [
+                {
+                    "nivel_meta": "X",
+                    "numero_goles": 1
+                },
+                {
+                    "nivel_meta": "Y",
+                    "numero_goles": 2
+                },
+                {
+                    "nivel_meta": "Alan Pulido",
+                    "numero_goles": 3
+                }
+            ]
+        }
+    ],
+    "equipos": [
+        {
+            "nombre_equipo": "Club America",
+            "meta_equipo": "ganadores",
+            "jugadores": [
+                {
+                    "nombre_jugador": "Luis",
+                    "nivel_jugador": "Cuauh",
+                    "goles_jugador": 20,
+                    "sueldo_jugador": 50000,
+                    "bono_jugador": 10000,
+                    "sueldo_completo_jugador": 59600
+                },
+                {
+                    "nombre_jugador": "Raul",
+                    "nivel_jugador": "A",
+                    "goles_jugador": 3,
+                    "sueldo_jugador": 40000,
+                    "bono_jugador": 10000,
+                    "sueldo_completo_jugador": 47600
+                }
+            ]
+        },
+        {
+            "nombre_equipo": "Chivitas",
+            "meta_equipo": "perdedores",
+            "jugadores": [
+                {
+                    "nombre_jugador": "Arturo",
+                    "nivel_jugador": "X",
+                    "goles_jugador": 1,
+                    "sueldo_jugador": 2000,
+                    "bono_jugador": 1000,
+                    "sueldo_completo_jugador": 3000
+                },
+                {
+                    "nombre_jugador": "Arturo",
+                    "nivel_jugador": "Y",
+                    "goles_jugador": 2,
+                    "sueldo_jugador": 3000,
+                    "bono_jugador": 1000,
+                    "sueldo_completo_jugador": 4000
+                },
+                {
+                    "nombre_jugador": "Arturo",
+                    "nivel_jugador": "Alan Pulido",
+                    "goles_jugador": 3,
+                    "sueldo_jugador": 5000,
+                    "bono_jugador": 1000,
+                    "sueldo_completo_jugador": 6000
+                }
+            ]
+        }
+    ]
+}
+```
 ***
 ### Ambiente de desarrollo
 
