@@ -4,28 +4,28 @@ interface ITeams {
 }
 
 interface ILevelType {
-    nombre: string
+    nombre_meta: string
     meta_de_goles: ILevel[]
 }
 
 interface ITeam {
-    nombre: string
-    meta: string
+    nombre_equipo: string
+    meta_equipo: string
     jugadores: IPlayer[]
 }
 
 interface ILevel {
-    nivel: string
+    nivel_meta: string
     numero_goles: number
 }
 
 interface IPlayer {
-    nombre: string
-    nivel: string
-    goles: number
-    sueldo: number
-    bono: number
-    sueldo_completo: number
+    nombre_jugador: string
+    nivel_jugador: string
+    goles_jugador: number
+    sueldo_jugador: number
+    bono_jugador: number
+    sueldo_completo_jugador: number
 }
 
 interface ITotalTeamGoals {

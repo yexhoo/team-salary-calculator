@@ -1,26 +1,26 @@
 {
     "metas": [
         {
-            "nombre": "meta-1",
+            "nombre_meta": "meta-1",
             "meta_de_goles": [
-                { "nivel":"A","numero_goles": 5 },
-                { "nivel":"B","numero_goles": 10 },
-                { "nivel":"C","numero_goles": 15 },
-                { "nivel":"Cuauh","numero_goles": 20 }
+                { "nivel_meta":"A","numero_goles": 5 },
+                { "nivel_meta":"B","numero_goles": 10 },
+                { "nivel_meta":"C","numero_goles": 15 },
+                { "nivel_meta":"Cuauh","numero_goles": 20 }
             ]
         }
     ],
     "equipos": [
         {
-            "nombre": "Club America",
-            "meta": "meta-1",
+            "nombre_equipo": "Club America",
+            "meta_equipo": "meta-1",
             "jugadores" : [
                 {
-                    "nombre": "Luis",
-                    "nivel": "Cuauh",
-                    "goles": 1,
-                    "sueldo": 50000,
-                    "bono": 10000
+                    "nombre_jugador": "Luis",
+                    "nivel_jugador": "Cuauh",
+                    "goles_jugador": 1,
+                    "sueldo_jugador": 50000,
+                    "bono_jugador": 10000
                 }
             ]
         }

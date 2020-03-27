@@ -15,7 +15,7 @@ describe('Salary', () => {
         const updated = Salary.update(list)
 
         const player0 = updated.equipos[0].jugadores[0]
-        expect(player0.sueldo_completo).is.equal(50000)
+        expect(player0.sueldo_completo_jugador).is.equal(50000)
     });
 
     it('Un equipo un jugador un gol', () => {
@@ -24,8 +24,8 @@ describe('Salary', () => {
         const updated = Salary.update(list)
 
         const player0 = updated.equipos[0].jugadores[0]
-        
-        expect(player0.sueldo_completo).is.equal(50500)
+
+        expect(player0.sueldo_completo_jugador).is.equal(50500)
     });
 
     it('Un equipo un jugador mitad de goles', () => {
@@ -34,7 +34,7 @@ describe('Salary', () => {
         const updated = Salary.update(list)
 
         const player0 = updated.equipos[0].jugadores[0]
-        expect(player0.sueldo_completo).is.equal(55000)
+        expect(player0.sueldo_completo_jugador).is.equal(55000)
     });
 
     it('Un equipo un jugador meta de goles igual meta esperada', () => {
@@ -43,7 +43,7 @@ describe('Salary', () => {
         const updated = Salary.update(list)
 
         const player0 = updated.equipos[0].jugadores[0]
-        expect(player0.sueldo_completo).is.equal(60000)
+        expect(player0.sueldo_completo_jugador).is.equal(60000)
     });
 
     it('Un equipo un jugador meta de goles mayor meta esperada', () => {
@@ -52,7 +52,7 @@ describe('Salary', () => {
         const updated = Salary.update(list)
 
         const player0 = updated.equipos[0].jugadores[0]
-        expect(player0.sueldo_completo).is.equal(60000)
+        expect(player0.sueldo_completo_jugador).is.equal(60000)
     });
 
     it('Un equipo multiples jugadores', () => {
@@ -64,11 +64,11 @@ describe('Salary', () => {
         const player1 = updated.equipos[0].jugadores[1]
         const player2 = updated.equipos[0].jugadores[2]
         const player3 = updated.equipos[0].jugadores[3]
-        
-        expect(player0.sueldo_completo).is.equal(29800)
-        expect(player1.sueldo_completo).is.equal(28300)
-        expect(player2.sueldo_completo).is.equal(29800)
-        expect(player3.sueldo_completo).is.equal(59550)
+
+        expect(player0.sueldo_completo_jugador).is.equal(29800)
+        expect(player1.sueldo_completo_jugador).is.equal(28300)
+        expect(player2.sueldo_completo_jugador).is.equal(29800)
+        expect(player3.sueldo_completo_jugador).is.equal(59550)
     });
 
     it('Multiples equipos, un jugador por equipo, misma meta de goles', () => {
@@ -78,9 +78,9 @@ describe('Salary', () => {
 
         const player_OneTeam = updated.equipos[0].jugadores[0]
         const player_SecondTeam = updated.equipos[1].jugadores[0]
-        
-        expect(player_OneTeam.sueldo_completo).is.equal(60000)
-        expect(player_SecondTeam.sueldo_completo).is.equal(30000)
+
+        expect(player_OneTeam.sueldo_completo_jugador).is.equal(60000)
+        expect(player_SecondTeam.sueldo_completo_jugador).is.equal(30000)
     });
 
     it('Multiples equipos, un jugador por equipo, diferente meta de goles', () => {
@@ -90,9 +90,9 @@ describe('Salary', () => {
 
         const player_OneTeam = updated.equipos[0].jugadores[0]
         const player_SecondTeam = updated.equipos[1].jugadores[0]
-        
-        expect(player_OneTeam.sueldo_completo).is.equal(60000)
-        expect(player_SecondTeam.sueldo_completo).is.equal(5333.33)
+
+        expect(player_OneTeam.sueldo_completo_jugador).is.equal(60000)
+        expect(player_SecondTeam.sueldo_completo_jugador).is.equal(5333.33)
     });
 
     it('Multiples equipos, multiples jugadores, diferente meta de goles', () => {
@@ -110,11 +110,11 @@ describe('Salary', () => {
         const player_2_SecondTeam = updated.equipos[1].jugadores[2]
 
 
-        expect(player_0_OneTeam.sueldo_completo).is.equal(59600)
-        expect(player_1_OneTeam.sueldo_completo).is.equal(47600)
+        expect(player_0_OneTeam.sueldo_completo_jugador).is.equal(59600)
+        expect(player_1_OneTeam.sueldo_completo_jugador).is.equal(47600)
 
-        expect(player_0_SecondTeam.sueldo_completo).is.equal(3000)
-        expect(player_1_SecondTeam.sueldo_completo).is.equal(4000)
-        expect(player_2_SecondTeam.sueldo_completo).is.equal(6000)
+        expect(player_0_SecondTeam.sueldo_completo_jugador).is.equal(3000)
+        expect(player_1_SecondTeam.sueldo_completo_jugador).is.equal(4000)
+        expect(player_2_SecondTeam.sueldo_completo_jugador).is.equal(6000)
     });
 });

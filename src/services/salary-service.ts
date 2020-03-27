@@ -19,7 +19,7 @@ export default class Salary {
         const totals: ITotalTeamGoals = SalaryHelper.getTotalGoals(team, metas)
         const teamPercentage = SalaryHelper.getPercentage(totals.scored, totals.required)
         team.jugadores = team.jugadores
-            .map(player => Salary.updatePlayer(player, team.meta, teamPercentage, metas))
+            .map(player => Salary.updatePlayer(player, team.meta_equipo, teamPercentage, metas))
 
         return team
     }
@@ -27,10 +27,10 @@ export default class Salary {
     static updatePlayer = (p: IPlayer, meta: string,
         teamPercentage: number, metas: Map<string, ILevel[]>): IPlayer => {
 
-        const required: number = Extractor.getLevelGoals(p.nivel, meta, metas)!
-        const scored: number = p.goles >= required ? required : p.goles
+        const required: number = Extractor.getLevelGoals(p.nivel_jugador, meta, metas)!
+        const scored: number = p.goles_jugador >= required ? required : p.goles_jugador
         const playerPercentage = SalaryHelper.getPercentage(scored, required)
-        p.sueldo_completo = Number((p.sueldo + (p.bono * (playerPercentage + teamPercentage))).toFixed(2))
+        p.sueldo_completo_jugador = Number((p.sueldo_jugador + (p.bono_jugador * (playerPercentage + teamPercentage))).toFixed(2))
 
         return p
     }

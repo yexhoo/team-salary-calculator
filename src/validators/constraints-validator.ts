@@ -14,12 +14,12 @@ export default class DataConstraintsValidator {
     static metaNoDefined = (data: ITeams) => {
 
         const metaNotDefined = data.equipos.filter(team => {
-            return !data.metas.some(meta => meta.nombre === team.meta)
+            return !data.metas.some(meta => meta.nombre_meta === team.meta_equipo)
         })
 
         if (metaNotDefined.length) {
-            const meta = metaNotDefined[0].meta
-            const team = metaNotDefined[0].nombre
+            const meta = metaNotDefined[0].meta_equipo
+            const team = metaNotDefined[0].nombre_equipo
             const err = Util.format(Message.META_EQUIPO_NO_COINCIDE, meta, team)
 
             throw Error(err)
@@ -38,13 +38,13 @@ export default class DataConstraintsValidator {
     static validateMetaVsPlayerLevel = (team: ITeam, metasMap: Map<string, ILevel[]>) => {
 
         const playersLevelNotDefined = team.jugadores
-            .filter(player => !metasMap.get(team.meta)!.some(mg => mg.nivel === player.nivel))
+            .filter(player => !metasMap.get(team.meta_equipo)!.some(mg => mg.nivel_meta === player.nivel_jugador))
 
         if (playersLevelNotDefined.length) {
 
-            const level = playersLevelNotDefined[0].nivel
-            const player = playersLevelNotDefined[0].nombre
-            const err = Util.format(Message.NIVEL_JUGADOR_NO_COINCIDE, level, player, team.nombre)
+            const level = playersLevelNotDefined[0].nivel_jugador
+            const player = playersLevelNotDefined[0].nombre_jugador
+            const err = Util.format(Message.NIVEL_JUGADOR_NO_COINCIDE, level, player, team.nombre_equipo)
 
             throw Error(err)
         }

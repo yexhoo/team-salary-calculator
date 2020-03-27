@@ -15,8 +15,8 @@ describe('Data Constraints Validator', () => {
         testFile = resources.concat('data-meta-no-defined.json')
         const list: ITeams = File.readJson(testFile)
 
-        const meta = list.equipos[1].meta
-        const team = list.equipos[1].nombre
+        const meta = list.equipos[1].meta_equipo
+        const team = list.equipos[1].nombre_equipo
         const expectedError = Util.format(Message.META_EQUIPO_NO_COINCIDE, meta, team)
 
         expect(() => Validator.data(list)).to.throw(Error, expectedError)
@@ -26,9 +26,9 @@ describe('Data Constraints Validator', () => {
         testFile = resources.concat('data-player-level-meta-no-defined.json')
         const list: ITeams = File.readJson(testFile)
 
-        const nivel = list.equipos[0].jugadores[0].nivel
-        const player = list.equipos[0].jugadores[0].nombre
-        const team = list.equipos[0].nombre
+        const nivel = list.equipos[0].jugadores[0].nivel_jugador
+        const player = list.equipos[0].jugadores[0].nombre_jugador
+        const team = list.equipos[0].nombre_equipo
 
         const expectedError = Util.format(Message.NIVEL_JUGADOR_NO_COINCIDE, nivel, player, team)
         expect(() => Validator.data(list)).to.throw(Error, expectedError)
