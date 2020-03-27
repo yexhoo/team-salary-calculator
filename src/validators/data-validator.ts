@@ -6,6 +6,7 @@ import Constraints from "./constraints-validator"
 export default class DataValidator {
 
     static data = (data: ITeams) => {
+
         Meta.validate(data)
         Team.validate(data)
         Constraints.validate(data)

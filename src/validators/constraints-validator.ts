@@ -6,6 +6,7 @@ import Extractor from "../utils/extractor"
 export default class DataConstraintsValidator {
 
     static validate = (data: ITeams) => {
+
         DataConstraintsValidator.metaNoDefined(data)
         DataConstraintsValidator.playerLevel(data)
     }
@@ -28,6 +29,7 @@ export default class DataConstraintsValidator {
     static playerLevel = (data: ITeams) => {
 
         const metasMap = Extractor.getMetas(data.metas)
+
         for (let i = 0; i < data.equipos.length; i++) {
             DataConstraintsValidator.validateMetaVsPlayerLevel(data.equipos[i], metasMap)
         }
@@ -35,11 +37,8 @@ export default class DataConstraintsValidator {
 
     static validateMetaVsPlayerLevel = (team: ITeam, metasMap: Map<string, ILevel[]>) => {
 
-        const playersLevelNotDefined = team.jugadores.filter(player => {
-
-            const meta_de_goles: ILevel[] = metasMap.get(team.meta)!
-            return !meta_de_goles.some(mg => mg.nivel === player.nivel)
-        })
+        const playersLevelNotDefined = team.jugadores
+            .filter(player => !metasMap.get(team.meta)!.some(mg => mg.nivel === player.nivel))
 
         if (playersLevelNotDefined.length) {
 
