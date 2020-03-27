@@ -303,7 +303,7 @@ La meta individual de goles por jugador depende del nivel que tenga asignado:
 
 Los siguientes pasos son necesarios solo en caso de querer:
 * Ejecutar pruebas unitarias
-* Ejecutar servidor en local host.
+* Ejecutar servidor en localhost.
 
 ```sh
 # Abrir una terminal
