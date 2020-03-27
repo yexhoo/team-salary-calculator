@@ -14,9 +14,10 @@ export default class ErrorMessage {
     public static readonly NOMBRE_JUGADOR_REQUERIDO = "El nombre del jugador es requerido"
     public static readonly NIVEL_JUGADOR_REQUERIDO = "El nivel del jugador es requerido"
     public static readonly GOLES_POR_JUGADOR_MAYOR_A_CERO = "Los goles por jugador deben ser mayor o igual a cero"
-    public static readonly SUELDO_POR_JUGADOR_MAYOR_A_CERO = "El sueldo por jugador debe ser es mayor a cero"
+    public static readonly SUELDO_POR_JUGADOR_MAYOR_A_CERO = "El sueldo por jugador debe ser mayor a cero"
     public static readonly BONO_POR_JUGADOR_MAYOR_A_CERO = "El bono por jugador debe ser mayor a cero"
 
     public static readonly META_EQUIPO_NO_COINCIDE = "La meta [%s] del equipo [%s] no concide con las metas definidas"
     public static readonly NIVEL_JUGADOR_NO_COINCIDE = "El nivel [%s] del jugador [%s] del equipo [%s] no concide con las metas definidas"
+
 }
