@@ -491,134 +491,26 @@ app_1  | Salary calculator is running on port 3000
         "detail": "La lista de metas es requerida"
     }
     ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "La meta de goles es requerida"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El nombre de la meta es requerido"
-    }
-    ```      
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El nivel de la meta de goles es requerido"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El numero de goles debe ser mayor a cero"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El numero de goles debe ser mayor a cero"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El bono por jugador debe ser mayor a cero"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "Los goles por jugador deben ser mayor o igual a cero"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El nivel del jugador es requerido"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El nombre del jugador es requerido"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El sueldo por jugador debe ser mayor a cero"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "La lista de equipos es requerida"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "La meta por equipo es requerida"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El nombre del equipo es requerido"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "Los jugadores por equipo son requeridos"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "La meta [meta-2] del equipo [Cruz Azul FC] no concide con las metas definidas"
-    }
-    ```
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ```javascript
-    {
-        "error": "Error al proesar la solicitud, favor de validar la entrada JSON",
-        "detail": "El nivel [X] del jugador [El Rulo] del equipo [Club America] no concide con las metas definidas"
-    }
-    ```
+ 
+|Codigo| Nivel       | Detalle                                                                                          |
+|------|-------------|--------------------------------------------------------------------------------------------------|
+|400   | Bad Request | La lista de metas es requerida                                                                   |
+|400   | Bad Request | El nombre de la meta es requerido                                                                |
+|400   | Bad Request | El nivel de la meta de goles es requerido                                                        |
+|400   | Bad Request | El numero de goles debe ser mayor a cero                                                         |
+|400   | Bad Request | El numero de goles debe ser mayor a cero                                                         |
+|400   | Bad Request | El bono por jugador debe ser mayor a cero                                                        |
+|400   | Bad Request | Los goles por jugador deben ser mayor o igual a cero                                             |
+|400   | Bad Request | El nivel del jugador es requerido                                                                |
+|400   | Bad Request | El nombre del jugador es requerido                                                               |
+|400   | Bad Request | El sueldo por jugador debe ser mayor a cero                                                      |
+|400   | Bad Request | La lista de equipos es requerida                                                                 |
+|400   | Bad Request | La meta por equipo es requerida                                                                  |
+|400   | Bad Request | El nombre del equipo es requerido                                                                |
+|400   | Bad Request | Los jugadores por equipo son requeridos                                                          |
+|400   | Bad Request | La meta [meta-2] del equipo [Cruz Azul FC] no concide con las metas definidas                    |
+|400   | Bad Request | El nivel [X] del jugador [El Rulo] del equipo [Club America] no concide con las metas definidas  |
+  
 
 * **Sample Call:**
     ```javascript
